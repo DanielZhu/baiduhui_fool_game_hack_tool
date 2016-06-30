@@ -29,13 +29,16 @@
 原理：
 
 - 每次打开活动进行时页面时，工具会进行拦截页面上的所有网页请求（包括Ajax, images, styles等等）
+
 `chrome.devtools.network.onRequestFinished.addListener(function (req) {})`
 
 - 过滤出活动页请求游戏开局时的随机商品列表
+
 `if (req.request.url.indexOf('/fool/game/info') > 0) {}`
 
 - 拿到上面的开局请求后，通过以下方法获得该请求的返回结果（response）
-``` js goodsList 就是每局的商品列表数据
+``` js
+// goodsList 就是每局的商品列表数据
 req.getContent(function (content, encoding) {
     var content = JSON.parse(content);
     var goodsList = content.data.result;
