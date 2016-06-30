@@ -1,0 +1,13 @@
+{
+  "name": "BaiduHui_Fool_Game_Hack_Tool",
+  "version": "0.1.0",
+  "minimum_chrome_version": "10.0",
+  "description": "根据拦截info接口，判断每次开局后的商品list，计算胜率",
+  "devtools_page": "devtools.html",
+  "background": { "scripts": ["background.js"] },
+  "permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "manifest_version": 2
+}
